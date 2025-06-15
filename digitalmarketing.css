@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------
+   🌈 Custom Theme Styling
+-------------------------- */
+
+/* Global Background */
+body {
+  @apply bg-gradient-to-br from-[#fdfbfb] via-[#ebedee] to-[#dfe9f3] text-gray-800 font-sans tracking-wide;
+}
+
+/* ---------- 🎨 Color Palette ---------- */
+
+/* Custom CSS variables (for optional use) */
+:root {
+  --brand-purple: #7f00ff;
+  --brand-pink: #ff00cc;
+  --brand-indigo: #3f51b5;
+  --brand-light: #f3e5f5;
+  --brand-dark: #1a1a2e;
+}
+
+/* ---------- 💠 Typography ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-bold tracking-tight;
+}
+
+.headline {
+  @apply text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600;
+}
+
+.subheadline {
+  @apply text-lg text-gray-700;
+}
+
+/* ---------- 🌟 Neon Buttons ---------- */
+
+.btn-neon {
+  @apply inline-block px-6 py-2 font-bold text-white rounded-full shadow-lg transition duration-300;
+  background: linear-gradient(to right, var(--brand-purple), var(--brand-pink));
+  box-shadow: 0 0 10px var(--brand-pink), 0 0 40px var(--brand-purple),
+    0 0 80px var(--brand-pink);
+}
+
+.btn-neon:hover {
+  background: linear-gradient(to right, #6a00f4, #ff0090);
+  transform: scale(1.05);
+}
+
+/* ---------- 🧊 Glassmorphism Cards ---------- */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  @apply rounded-2xl p-6 text-white shadow-xl transition-all duration-300 hover:shadow-2xl;
+}
+
+/* ---------- 🧠 Forms ---------- */
+
+.input-glow {
+  @apply w-full p-3 mt-3 rounded-xl bg-white/30 text-white placeholder-white/80 border border-white/30 focus:outline-none focus:ring-2 focus:ring-pink-400;
+}
+
+/* ---------- 💡 Headers ---------- */
+
+.header-glow {
+  @apply w-full py-4 px-6 text-white text-3xl font-bold rounded-b-xl shadow-md;
+  background: linear-gradient(
+    to right,
+    var(--brand-indigo),
+    var(--brand-purple)
+  );
+  box-shadow: 0 4px 20px rgba(127, 0, 255, 0.5);
+}
+
+/* ---------- 📊 Section Utilities ---------- */
+
+.section {
+  @apply py-12 px-6 md:px-16;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-gray-900 mb-6;
+}
+
+.card-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+/* ---------- 🎉 Animation Helper ---------- */
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
